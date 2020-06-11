@@ -12,9 +12,9 @@ jobs:
       # - uses: ./action-a
       #   with:
       #     MY_NAME: "Alex"
-      - uses: actions/checkout@v2
+      - uses: ./action-a
         name: docker build python test image
         run: |
-        docker build ./action-a -t python:test
+        docker build -t python:test
 
 

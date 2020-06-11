@@ -1,4 +1,4 @@
-name: Docker Series Builds
+name: Docker build & push😎
 
 
 on: [push]
@@ -16,7 +16,7 @@ jobs:
         docker login docker.pkg.github.com -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
     - name: docker build python
       run: |
-        docker build ./action-a -t python:test
+        docker build ./action-a -t docker.pkg.github.com/AlexanderNurzhanov/hello-github-actions/python:test
     - name: docker push
       run: |
-        docker push python:test
+        docker push docker.pkg.github.com/AlexanderNurzhanov/hello-github-actions/python:test

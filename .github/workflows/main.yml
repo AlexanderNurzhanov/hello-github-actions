@@ -1,22 +1,20 @@
 name: Docker-Image Build & Push (TEST)
-on: push
+
+on: [push]
 
 jobs:
   build:
     name: My first Action!😎
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v1
       # - uses: ./action-a
       #   with:
       #     MY_NAME: "Alex"
-      - uses: mr-smithers-excellent/docker-build-push@v3
-        name: Build & push Docker image
-        with:
-          image: hello-github-actions/python
-          tag: latest
-          registry: docker.pkg.github.com
-          dockerfile: python
-          username: ${{secrets.DOCKER_USER}}
-          password: ${{secrets.DOCKER_PASSWORD}}
+      - uses: actions/checkout@v2
+        name: docker build python test image
+        run: |
+        docker build ./action-a -t python:test
+
 

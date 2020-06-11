@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ./action-a
-        with:
-          MY_NAME: "Alex"
+      # - uses: ./action-a
+      #   with:
+      #     MY_NAME: "Alex"
       - uses: mr-smithers-excellent/docker-build-push@v3
         name: Build & push Docker image
         with:
@@ -19,4 +19,5 @@ jobs:
           dockerfile: python
           username: ${{secrets.DOCKER_USER}}
           password: ${{secrets.DOCKER_PASSWORD}}
+          MY_NAME: "Alex"
 

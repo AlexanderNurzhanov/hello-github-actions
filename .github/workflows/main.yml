@@ -1,7 +1,5 @@
 name: Docker-Image Build & Push (TEST)
-
 on: push
-
 jobs:
   build:
     name: My first Action!😎

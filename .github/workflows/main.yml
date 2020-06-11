@@ -19,5 +19,4 @@ jobs:
           dockerfile: python
           username: ${{secrets.DOCKER_USER}}
           password: ${{secrets.DOCKER_PASSWORD}}
-          MY_NAME: "Alex"
 

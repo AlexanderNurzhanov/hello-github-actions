@@ -1,0 +1,14 @@
+crypto
+cryptography
+httplib2
+ipaddress
+jinja2
+lxml
+markupsafe
+netaddr
+paramiko
+pyasn1
+requests
+requests-oauthlib
+urllib3
+virtualenv

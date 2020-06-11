@@ -1,16 +1,16 @@
-name: "Hello Actions"
-description: "Greet someone"
-author: "octocat@github.com"
+name: "Test Actions"
+description: "Build & Push Docker Image"
+author: "alexander.nurzhanov@md.de"
 
 inputs:
   MY_NAME:
     description: "Who to greet"
     required: true
-    default: "World"
+    default: "Docker-Image Test"
 
 runs:
   using: "docker"
-  image: "Dockerfile"
+  image: "python"
 
 branding:
   icon: "thumbs-up"

@@ -1,5 +1,6 @@
-name: My first GitHub Actions-Repo
+name: Docker-Image Build & Push (TEST)
 on: push
+
 jobs:
   build:
     name: My first Action!😎
@@ -9,3 +10,13 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Alex"
+      - uses: mr-smithers-excellent/docker-build-push@v3
+        name: Build & push Docker image
+        with:
+          image: hello-github-actions/python
+          tag: latest
+          registry: docker.pkg.github.com
+          dockerfile: python
+          username: ${{secret.DOCKER_USER}}
+          password: ${{secret.DOCKER_PASSWORD}}
+

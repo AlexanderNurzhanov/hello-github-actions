@@ -17,6 +17,6 @@ jobs:
           tag: latest
           registry: docker.pkg.github.com
           dockerfile: python
-          username: ${{secret.DOCKER_USER}}
-          password: ${{secret.DOCKER_PASSWORD}}
+          username: ${{secrets.DOCKER_USER}}
+          password: ${{secrets.DOCKER_PASSWORD}}
 

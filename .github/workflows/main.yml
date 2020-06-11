@@ -1,18 +1,22 @@
-name: Docker-Image Build & Push (TEST)
-on: push
+name: Docker Series Builds
+
+
+on: [push]
+
 jobs:
   build:
-    name: My first Action!😎
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v1
-      # - uses: ./action-a
-      #   with:
-      #     MY_NAME: "Alex"
-      - uses: ./action-a
-        name: docker build python test image
-        run: |
-        docker build -t python:test
-
-
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+    - name: docker build python
+      run: |
+        docker build ./action-a -t python:test
+    - name: docker push
+      run: |
+        docker push python:test

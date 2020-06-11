@@ -19,4 +19,4 @@ jobs:
         docker build ./action-a -t docker.pkg.github.com/alexandernurzhanov/hello-github-actions/python:test
     - name: docker push
       run: |
-        docker push docker.pkg.github.com/AlexanderNurzhanov/hello-github-actions/python:test
+        docker push docker.pkg.github.com/alexandernurzhanov/hello-github-actions/python:test

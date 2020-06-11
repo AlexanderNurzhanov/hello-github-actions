@@ -1,6 +1,6 @@
 name: Docker-Image Build & Push (TEST)
 
-on: [push]
+on: push
 
 jobs:
   build:

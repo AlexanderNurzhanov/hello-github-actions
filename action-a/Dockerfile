@@ -11,8 +11,6 @@ ARG REQUIRE_FILE='/tmp/requirements.txt'
 
 ADD src/requirements.txt ${REQUIRE_FILE}
 
-ADD entrypoint.sh /entrypoint.sh
-
 RUN set -eux && \
     apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -27,9 +25,6 @@ RUN set -eux && \
     pip3 install -r ${REQUIRE_FILE} && \
     ln -s /usr/bin/python3 /usr/bin/python && \
     ln -s /usr/bin/pip3 /usr/bin/pip && \
-    rm ${REQUIRE_FILE} && \
-    chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+    rm ${REQUIRE_FILE}
 
 CMD [ "python", "--version" ]
